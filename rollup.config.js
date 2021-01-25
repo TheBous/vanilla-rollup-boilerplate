@@ -4,7 +4,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
-import terser from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
+import sass from 'rollup-plugin-sass';
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
+import analyze from 'rollup-plugin-analyzer';
+import visualizer from 'rollup-plugin-visualizer';
 import progress from 'rollup-plugin-progress';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -25,8 +30,17 @@ export default {
     }),
     resolve(),
     commonjs(),
+    sass({
+      output: 'build/bundle.css',
+      processor: (css) =>
+        postcss([autoprefixer])
+          .process(css)
+          .then((result) => result.css),
+    }),
     NODE_ENV !== 'production' && serve({ contentBase: 'build' }),
     NODE_ENV !== 'production' && livereload(),
+    NODE_ENV !== 'production' && analyze(),
+    NODE_ENV !== 'production' && visualizer(),
     NODE_ENV === 'production' && terser(),
   ],
 };
