@@ -1,0 +1,14 @@
+@mixin light() {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@mixin regular() {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@mixin medium() {
+  font-size: 24px;
+  font-weight: 500;
+}

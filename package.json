@@ -44,12 +44,11 @@
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-livereload": "^1.2.0",
+    "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-visualizer": "^4.2.0"
   },
-  "dependencies": {
-    "rollup-plugin-progress": "^1.1.2"
-  }
+  "dependencies": {}
 }
