@@ -3648,15 +3648,30 @@
         version: 1,
         tree: {
           name: "bundle.js",
-          children: [{ name: "index.js", uid: "eab5-0" }],
-          renderedLength: 556,
+          children: [
+            {
+              name: "js",
+              children: [
+                { name: "builder", children: [{ name: "CustomComponent.js", uid: "3ebe-1" }] },
+              ],
+            },
+            { name: "index.js", uid: "3ebe-2" },
+            { name: "\u0000rollupPluginBabelHelpers.js", uid: "3ebe-0" },
+          ],
+          renderedLength: 2722,
           isRoot: true,
         },
         nodes: {
-          "eab5-0": { renderedLength: 102, isEntry: true, id: "index.js" },
-          "eab5-1": { renderedLength: 0, id: "scss/index.scss" },
+          "3ebe-0": { renderedLength: 751, id: "\u0000rollupPluginBabelHelpers.js" },
+          "3ebe-1": { renderedLength: 1042, id: "js/builder/CustomComponent.js" },
+          "3ebe-2": { renderedLength: 328, isEntry: true, id: "index.js" },
+          "3ebe-3": { renderedLength: 0, id: "scss/index.scss" },
         },
-        links: [{ source: "eab5-0", target: "eab5-1" }],
+        links: [
+          { source: "3ebe-2", target: "3ebe-1" },
+          { source: "3ebe-2", target: "3ebe-3" },
+          { source: "3ebe-1", target: "3ebe-0" },
+        ],
         env: { rollup: "2.38.0", "rollup-plugin-visualizer": "4.2.0" },
         options: { gzip: false, brotli: false },
       };
