@@ -4,7 +4,7 @@ import "./scss/index.scss";
 const custom = new CustomComponent({
   selector: "body",
   props: {
-    heading: "Example component",
+    heading: "Heading 1",
     todos: ["ex1", "ex2", "ex3", "ex4"],
   },
   template: ({ heading, todos }) => {
@@ -17,3 +17,8 @@ const custom = new CustomComponent({
 });
 
 custom.render();
+
+setTimeout(() => {
+  custom.props.todos.push("ex5");
+  custom.props.heading = "Heading 2";
+}, 3000);
