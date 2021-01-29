@@ -11,14 +11,18 @@ const custom = new CustomComponent({
     return `
 			<h1>${heading}</h1>
 			<ul>
-				${todos.map((todo) => `<li>${todo}</li>`).join("")}
+				${JSON.stringify(todos)}
 			</ul>`;
   },
 });
 
-custom.render();
+const fetchDatas = async () => {
+  const a = await fetch("https://randomuser.me/api/", {
+    method: "GET",
+  });
+  const b = await a.json();
+  console.error("error");
+  custom.props.todos = b;
+};
 
-setTimeout(() => {
-  custom.props.todos.push("ex5");
-  custom.props.heading = "Heading 2";
-}, 3000);
+custom.render();
