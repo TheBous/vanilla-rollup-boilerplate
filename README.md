@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/TheBous">
-    <img src="https://github.com/TheBous/vanilla-rollup-boilerplate/images/boilerplate.svg" alt="logo" width="300"/>
+    <img src="/images/boilerplate.svg" alt="logo" width="300"/>
   </a>
   <br>
   <br>
